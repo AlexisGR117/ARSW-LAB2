@@ -1,7 +1,10 @@
 .DS_Store
-target
+**/target/
 solucion
 enunciado
 parte1/target
 parte2/target
 .idea
+**/.classpath
+**/.project
+**/.settings/

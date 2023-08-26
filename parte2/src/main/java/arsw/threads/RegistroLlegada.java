@@ -2,26 +2,25 @@ package arsw.threads;
 
 public class RegistroLlegada {
 
-	private int ultimaPosicionAlcanzada=1;
+    private int ultimaPosicionAlcanzada = 1;
 
-	private String ganador=null;
-	
-	public String getGanador() {
-		return ganador;
-	}
+    private String ganador = null;
 
-	public void setGanador(String ganador) {
-		this.ganador = ganador;
-	}
+    public String getGanador() {
+        return ganador;
+    }
 
-	public int getUltimaPosicionAlcanzada() {
-		return ultimaPosicionAlcanzada;
-	}
+    public void setGanador(String ganador) {
+        this.ganador = ganador;
+    }
 
-	public void setUltimaPosicionAlcanzada(int ultimaPosicionAlcanzada) {
-		this.ultimaPosicionAlcanzada = ultimaPosicionAlcanzada;
-	}
+    public int getUltimaPosicionAlcanzada() {
+        return ultimaPosicionAlcanzada;
+    }
 
-	
-	
+    public void setUltimaPosicionAlcanzada(int ultimaPosicionAlcanzada) {
+        this.ultimaPosicionAlcanzada = ultimaPosicionAlcanzada;
+    }
+
+
 }
