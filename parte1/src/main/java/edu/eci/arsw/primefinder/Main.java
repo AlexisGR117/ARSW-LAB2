@@ -32,6 +32,7 @@ public class Main {
         System.out.print("Numero de primos encontrados hasta el momento: " + primes.size() + "\n");
         System.out.print("Presione enter para continuar");
         (new Scanner(System.in)).nextLine();
+        for (PrimeFinderThread thread : threads) thread.resumeExecution();
         synchronized (primes) {
             primes.notifyAll();
         }

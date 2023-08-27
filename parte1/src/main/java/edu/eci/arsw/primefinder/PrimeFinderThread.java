@@ -21,21 +21,33 @@ public class PrimeFinderThread extends Thread {
     public void run() {
         long startTime = System.currentTimeMillis();
         for (int i = a; i <= b; i++) {
-            synchronized (sharedPrimes) {
-                if (isPrime(i)) {
-                    sharedPrimes.add(i);
-                    System.out.println(Thread.currentThread().getName() + " :" + i);
-                }
-                if (!stop && System.currentTimeMillis() - startTime > 5000) {
-                    stop = true;
-                    try {
-                        sharedPrimes.wait();
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
-                }
+            try {
+                this.detener(startTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
+            }
+            if (isPrime(i)) this.addPrime(i);
+        }
+    }
+
+    public void addPrime(int primeNumber) {
+        synchronized (sharedPrimes) {
+            sharedPrimes.add(primeNumber);
+            System.out.println(Thread.currentThread().getName() + " :" + primeNumber);
+        }
+    }
+
+    public void detener(long startTime) throws InterruptedException {
+        synchronized (sharedPrimes) {
+            while (!stop && System.currentTimeMillis() - startTime >= 5000) {
+                sharedPrimes.wait();
             }
         }
+    }
+
+    public void resumeExecution() {
+        this.stop = true;
     }
 
     boolean isPrime(int n) {

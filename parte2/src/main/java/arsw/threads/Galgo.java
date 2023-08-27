@@ -20,7 +20,7 @@ public class Galgo extends Thread {
 
     public void corra() throws InterruptedException {
         while (paso < carril.size()) {
-            if (dormido) this.dormir();
+            this.dormir();
             Thread.sleep(100);
             carril.setPasoOn(paso++);
             carril.displayPasos(paso);
@@ -40,14 +40,9 @@ public class Galgo extends Thread {
         }
     }
 
-    public void dormir() {
+    public void dormir() throws InterruptedException {
         synchronized (regl) {
-            try {
-                regl.wait();
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-                Thread.currentThread().interrupt();
-            }
+            while (dormido) regl.wait();
         }
     }
 
@@ -62,6 +57,7 @@ public class Galgo extends Thread {
             corra();
         } catch (InterruptedException e) {
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
 
     }

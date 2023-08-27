@@ -18,7 +18,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 > Al ejecutar el programa se puede ver en el administrador de tareas como se incrementa el porcentaje de uso de los núcleos, que en mi caso son 4 los que están siendo usados.
 
-3. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
+2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
 <p align="center">
     <img src="img/Parte1-2.png" alt="Gráficas con los porcentajes de uso por cada núcleo">
@@ -26,7 +26,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 > Al usar tres hilos para resolver el problema se sigue haciendo uso de los 4 núcleos, donde está vez se puede ver que el porcentaje de uso aumenta y se mantiene constante. Además, el tiempo de uso disminuye significativamente y el uso para todos los núcleos es más similar.
 
-4. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
+3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
 ##### Parte II 
 
